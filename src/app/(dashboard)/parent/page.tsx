@@ -1,6 +1,5 @@
 import Annoucements from "@/components/Annoucements";
 import BigCalendar from "@/components/BigCalendar";
-import EventCalendar from "@/components/EventCalendar";
 import React from "react";
 
 const ParentPage = () => {
