@@ -1,4 +1,4 @@
-// import FormModal from "@/components/FormModal";
+import FormModal from "@/components/FormModal";
 import Performance from "@/components/Performance";
 import Annoucements from "@/components/Annoucements";
 import BigCalendar from "@/components/BigCalendar";
@@ -27,26 +27,26 @@ const SingleTeacherPage = () => {
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <div className="flex items-center gap-4">
                 <h1 className="text-xl font-semibold">Leonard Snyder</h1>
-                {/* {role === "admin" && (
-                  // <FormModal
-                  //   table="teacher"
-                  //   type="update"
-                  //   data={{
-                  //     id: 1,
-                  //     username: "deanguerrero",
-                  //     email: "deanguerrero@gmail.com",
-                  //     password: "password",
-                  //     firstName: "Dean",
-                  //     lastName: "Guerrero",
-                  //     phone: "+1 234 567 89",
-                  //     address: "1234 Main St, Anytown, USA",
-                  //     bloodType: "A+",
-                  //     dateOfBirth: "2000-01-01",
-                  //     sex: "male",
-                  //     img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                  //   }}
-                  // />
-                )} */}
+                {role === "admin" && (
+                  <FormModal
+                    table="teacher"
+                    type="update"
+                    data={{
+                      id: 1,
+                      username: "deanguerrero",
+                      email: "deanguerrero@gmail.com",
+                      password: "password",
+                      firstName: "Dean",
+                      lastName: "Guerrero",
+                      phone: "+1 234 567 89",
+                      address: "1234 Main St, Anytown, USA",
+                      bloodType: "A+",
+                      dateOfBirth: "2000-01-01",
+                      sex: "male",
+                      img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    }}
+                  />
+                )}
               </div>
               <p className="text-sm text-gray-500">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -72,9 +72,9 @@ const SingleTeacherPage = () => {
             </div>
           </div>
           {/* SMALL CARDS */}
-          <div className="flex-1 flex gap-4 justify-between flex-wrap">
+          <div className="flex-1 flex gap-3 justify-between flex-wrap">
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] ">
+            <div className="bg-white p-4 rounded-md flex gap-2 w-full md:w-[48%] xl:w-[48%] ">
               <Image
                 src="/singleAttendance.png"
                 alt=""
@@ -88,7 +88,7 @@ const SingleTeacherPage = () => {
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] ">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] ">
               <Image
                 src="/singleBranch.png"
                 alt=""
@@ -102,7 +102,7 @@ const SingleTeacherPage = () => {
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] ">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] ">
               <Image
                 src="/singleLesson.png"
                 alt=""
@@ -116,7 +116,7 @@ const SingleTeacherPage = () => {
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] ">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] ">
               <Image
                 src="/singleClass.png"
                 alt=""

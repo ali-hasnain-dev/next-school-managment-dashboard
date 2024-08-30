@@ -9,35 +9,25 @@ import { InputField } from "../InputField";
 const schema = z.object({
   username: z
     .string()
-    .min(3, { message: "username must be at least 3 characters" })
-    .max(20, { message: "username must be less than 20 characters" }),
-  email: z.string().email({ message: "Invalid email address" }),
+    .min(3, { message: "Username must be at least 3 characters long!" })
+    .max(20, { message: "Username must be at most 20 characters long!" }),
+  email: z.string().email({ message: "Invalid email address!" }),
   password: z
     .string()
-    .min(8, { message: "Password must be at least 8 characters" }),
-  firstName: z
-    .string()
-    .min(1, { message: "First name must be at least 1 character" })
-    .max(20, { message: "First name must be less than 20 characters" }),
-  lastName: z
-    .string()
-    .min(1, { message: "Last name must be at least 1 character" })
-    .max(20, { message: "Last name must be less than 20 characters" }),
-  phone: z
-    .string()
-    .min(10, { message: "Phone number must be at least 10 digits" }),
-  address: z
-    .string()
-    .min(1, { message: "Address must be at least 1 character" }),
+    .min(8, { message: "Password must be at least 8 characters long!" }),
+  firstName: z.string().min(1, { message: "First name is required!" }),
+  lastName: z.string().min(1, { message: "Last name is required!" }),
+  phone: z.string().min(1, { message: "Phone is required!" }),
+  address: z.string().min(1, { message: "Address is required!" }),
   bloodType: z.string().min(1, { message: "Blood Type is required!" }),
-  birthday: z.date({ message: "Please enter a valid date" }),
-  sex: z.enum(["male", "female"], { message: "Please select a gender" }),
-  img: z.instanceof(File, { message: "Please select an image" }),
+  birthday: z.date({ message: "Birthday is required!" }),
+  sex: z.enum(["male", "female"], { message: "Sex is required!" }),
+  img: z.instanceof(File, { message: "Image is required" }),
 });
 
 type Inputs = z.infer<typeof schema>;
 
-const TeacherForm = ({
+const StudentForm = ({
   type,
   data,
 }: {
@@ -58,35 +48,35 @@ const TeacherForm = ({
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
-      <h1 className="text-lg font-semibold">Create a new Teacher</h1>
-      <span className="text-sm text-gray-400 font-medium">
+      <h1 className="text-xl font-semibold">Create a new student</h1>
+      <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
           label="Username"
-          register={register}
           name="username"
           defaultValue={data?.username}
+          register={register}
           error={errors?.username}
         />
         <InputField
           label="Email"
-          type="email"
-          register={register}
           name="email"
           defaultValue={data?.email}
+          register={register}
           error={errors?.email}
         />
         <InputField
-          label="Passowrd"
-          register={register}
+          label="Password"
           name="password"
+          type="password"
           defaultValue={data?.password}
+          register={register}
           error={errors?.password}
         />
       </div>
-      <span className="text-sm text-gray-400 font-medium">
+      <span className="text-xs text-gray-400 font-medium">
         Personal Information
       </span>
       <div className="flex justify-between flex-wrap gap-4">
@@ -165,7 +155,6 @@ const TeacherForm = ({
           )}
         </div>
       </div>
-
       <button className="bg-blue-400 text-white p-2 rounded-md">
         {type === "create" ? "Create" : "Update"}
       </button>
@@ -173,4 +162,4 @@ const TeacherForm = ({
   );
 };
 
-export default TeacherForm;
+export default StudentForm;
